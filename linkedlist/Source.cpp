@@ -1,3 +1,9 @@
+/*
+Meant for Practice/ Educational Purposes
+Author: Siddharth Rajguru
+Purpose: Linked List manipulation and creation
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <iomanip>
@@ -12,17 +18,17 @@ struct node {
     struct node* next;
 };
 
-void linkInsert(int val){
+void linkInsert(int val){									/*Insert a node object */
 	struct node* temp;
 	struct node* temp2;
-	if (head != NULL){
-		temp = new (struct node);
+	if (head != NULL){										/*If not the first node*/
+		temp = new (struct node); 
 		temp->x = val;
 		temp->next = head;
 		head = temp;
 		printf("\n");
 	};  
-	if(head == NULL){
+	if (head == NULL){										/*if the first node*/
 		temp = new (struct node);
 		temp->x = val;
 		temp->next = NULL;
@@ -31,7 +37,7 @@ void linkInsert(int val){
 	};
 	};
 
-void nInsert(int val, int n){
+void nInsert(int val, int n){							/*Insert a node at the Nth position in the list*/
 	struct node* temp = head;
 	struct node* temp2;
 	struct node* temp3;
@@ -50,7 +56,7 @@ void nInsert(int val, int n){
 	printf("\n");
 }
 
-void listRev(){
+void listRev(){											/*Reverse List Head = Null and Null = Head*/
 	struct node* temp = head;
 	struct node* temp2 = NULL;
 	while (head != NULL){	
@@ -62,7 +68,7 @@ void listRev(){
 	head = temp2;
 };
 
-void print(){
+void print(){											/*Print list contents*/
 	struct node* temp = head;
 	printf("list is:");
 	while (temp != NULL ){	
